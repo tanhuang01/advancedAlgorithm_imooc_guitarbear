@@ -52,14 +52,18 @@ public class Palindrome2 {
                     if (a[i][iy] == a[j][jy]) {
                         dp[k2][idp][jdp] += (dp[k1][idp][jdp] * (a[i + 1][iy] == a[j][jy - 1] ? 1 : 0));
                         dp[k2][idp][jdp] += (dp[k1][idp + 1][jdp] * (a[i][iy + 1] == a[j][jy - 1] ? 1 : 0));
-                        dp[k2][idp][jdp] += (dp[k1][idp][jdp + 1] * (a[i + 1][iy] == a[j - 1][jy - 1] ? 1 : 0));
-                        dp[k2][idp][jdp] += (dp[k1][idp + 1][jdp + 1] * (a[i][iy + 1] == a[j - 1][jy - 1] ? 1 : 0));
+                        dp[k2][idp][jdp] += (dp[k1][idp][jdp + 1] * (a[i + 1][iy] == a[j - 1][jy] ? 1 : 0));
+                        dp[k2][idp][jdp] += (dp[k1][idp + 1][jdp + 1] * (a[i][iy + 1] == a[j - 1][jy] ? 1 : 0));
                         dp[k2][idp][jdp] %= MOD;
                     }
                     // do nothing if a[i][iy] != a[j][jy]
                 }
             }
-//            System.out.println();
+            System.out.println();
+            for (int i = 0; i < n; i++) {
+                System.out.println(Arrays.toString(dp[k2][i]));
+            }
+
         }
 
         System.out.println(dp[(n + 1) % 2][0][n - 1]);
