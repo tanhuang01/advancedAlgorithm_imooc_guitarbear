@@ -11,7 +11,7 @@ public class Palindrome2 {
 
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(
-                Paths.get("src/ad_dp/palin", "1.in"));
+                Paths.get("src/ad_dp/palin", "2.in"));
 //        Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
 
@@ -26,7 +26,7 @@ public class Palindrome2 {
         }
 
         // we map the square to a diamond
-        long[][][] dp = new long[2][n + 1][n + 1];
+        long[][][] dp = new long[2][n][n];
         for (int i = 0; i < n; i++) {
             // in the center line of the diamond,
             // from i-th num to the i-th num,
@@ -46,7 +46,7 @@ public class Palindrome2 {
 //                System.out.printf("i:[%d][%d] ", i, iy);
                 for (int j = n - 1; j >= k; j--) {
                     int jy = n + k - 1 - j;
-                    int jdp = jy - 1;
+                    int jdp = jy - k;
 //                    System.out.printf("j:[%d][%d] ", j, jy);
 
                     if (a[i][iy] == a[j][jy]) {
@@ -66,7 +66,7 @@ public class Palindrome2 {
 
         }
 
-        System.out.println(dp[(n + 1) % 2][0][n - 1]);
+        System.out.println(dp[(n + 1) % 2][0][0]);
 
     }
 
