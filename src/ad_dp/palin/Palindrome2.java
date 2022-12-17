@@ -21,10 +21,6 @@ public class Palindrome2 {
         }
         scanner.close();
 
-        for (int i = 0; i < n; i++) {
-            System.out.println(Arrays.toString(a[i]));
-        }
-
         // we map the square to a diamond
         long[][][] dp = new long[2][n][n];
         for (int i = 0; i < n; i++) {
@@ -58,10 +54,6 @@ public class Palindrome2 {
                     }
                     // do nothing if a[i][iy] != a[j][jy]
                 }
-            }
-            System.out.println();
-            for (int i = 0; i < n; i++) {
-                System.out.println(Arrays.toString(dp[k2][i]));
             }
 
         }
