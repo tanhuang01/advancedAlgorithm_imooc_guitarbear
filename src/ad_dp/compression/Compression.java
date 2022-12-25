@@ -69,7 +69,6 @@ public class Compression {
         }
 
         System.out.println(f[0][n - 1]);
-
     }
 }
 
