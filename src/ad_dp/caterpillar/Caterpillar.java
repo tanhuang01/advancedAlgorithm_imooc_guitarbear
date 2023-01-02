@@ -64,26 +64,4 @@ public class Caterpillar {
 
     }
 
-    private static void showGraph(ArrayList[] graph) {
-        for (int i = 0; i < graph.length; i++) {
-            if (graph[i] != null) {
-                System.out.print(i + ":");
-                System.out.println(Arrays.toString(graph[i].toArray()));
-            }
-        }
-    }
-
-    private static void test() {
-        int l1 = 0, l2 = 0, children = 0;
-        int[] a = {1, 2, 5, 9, 4, 10, 6};
-        for (int i = 0; i < a.length; i++) {
-            if (l1 <= a[i]) {
-                l2 = l1;
-                l1 = a[i];
-            } else {
-                l2 = Math.max(l2, a[i]);
-            }
-        }
-        System.out.printf("l1:%d l2:%d", l1, l2);
-    }
 }

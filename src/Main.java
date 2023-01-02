@@ -21,6 +21,10 @@ public class Main {
 //        Scanner scanner = new Scanner(System.in);
 //        scanner.close();
 
+        for (int i = 21; i < 42; i++) {
+            System.out.println(i);
+        }
+
     }
 
 
